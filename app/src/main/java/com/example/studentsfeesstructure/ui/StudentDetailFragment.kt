@@ -31,7 +31,7 @@ class StudentDetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val adapter = PaymentAdapter()
+        val adapter = PaymentAdapter { p -> showPaymentOptions(p) }
         b.recycler.layoutManager = LinearLayoutManager(requireContext())
         b.recycler.adapter = adapter
 
@@ -75,19 +75,45 @@ class StudentDetailFragment : Fragment() {
         b.tvBalance.text = "Balance: ${money(s.feeCharged - totalPaid)}"
     }
 
-    private fun showPaymentDialog() {
+    private fun showPaymentDialog(existing: Payment? = null) {
         val d = DialogPaymentBinding.inflate(layoutInflater)
+        if (existing != null) {
+            d.etAmount.setText(existing.amount.toString())
+            d.etMethod.setText(existing.method)
+            d.etReference.setText(existing.reference)
+        }
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle("Record payment")
+            .setTitle(if (existing == null) "Record payment" else "Edit payment")
             .setView(d.root)
             .setPositiveButton("Save") { _, _ ->
                 val amount = d.etAmount.text.toString().toDoubleOrNull()
                 if (amount == null || amount <= 0) return@setPositiveButton
                 val method = d.etMethod.text.toString().ifBlank { "Cash" }
                 val ref = d.etReference.text.toString().ifBlank { "-" }
-                vm.addPayment(Payment(studentId = studentId, amount = amount,
-                    date = System.currentTimeMillis(), method = method, reference = ref))
+                if (existing == null) {
+                    vm.addPayment(Payment(studentId = studentId, amount = amount,
+                        date = System.currentTimeMillis(), method = method, reference = ref))
+                } else {
+                    vm.updatePayment(existing.copy(amount = amount, method = method, reference = ref))
+                }
             }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun showPaymentOptions(p: Payment) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(money(p.amount))
+            .setItems(arrayOf("Edit", "Delete")) { _, which ->
+                if (which == 0) showPaymentDialog(p) else confirmDeletePayment(p)
+            }
+            .show()
+    }
+
+    private fun confirmDeletePayment(p: Payment) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Delete payment?")
+            .setPositiveButton("Delete") { _, _ -> vm.deletePayment(p) }
             .setNegativeButton("Cancel", null)
             .show()
     }

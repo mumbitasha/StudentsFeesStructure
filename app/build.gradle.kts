@@ -56,3 +56,6 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.8.5")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 }
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}

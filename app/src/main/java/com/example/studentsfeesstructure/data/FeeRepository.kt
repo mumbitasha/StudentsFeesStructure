@@ -11,4 +11,6 @@ class FeeRepository(private val students: StudentDao, private val payments: Paym
     suspend fun update(s: Student) = students.update(s)
     suspend fun delete(s: Student) = students.delete(s)
     suspend fun addPayment(p: Payment) = payments.insert(p)
+    suspend fun updatePayment(p: Payment) = payments.update(p)
+    suspend fun deletePayment(p: Payment) = payments.delete(p)
 }

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.studentsfeesstructure.data.Payment
 import com.example.studentsfeesstructure.databinding.ItemPaymentBinding
 
-class PaymentAdapter : ListAdapter<Payment, PaymentAdapter.VH>(Diff) {
+class PaymentAdapter(private val onClick: (Payment) -> Unit) : ListAdapter<Payment, PaymentAdapter.VH>(Diff) {
 
     inner class VH(val b: ItemPaymentBinding) : RecyclerView.ViewHolder(b.root)
 
@@ -19,6 +19,7 @@ class PaymentAdapter : ListAdapter<Payment, PaymentAdapter.VH>(Diff) {
         val p = getItem(position)
         h.b.tvAmount.text = money(p.amount)
         h.b.tvMeta.text = "${dateStr(p.date)} · ${p.method} · ${p.reference}"
+        h.b.root.setOnClickListener { onClick(p) }
     }
 
     object Diff : DiffUtil.ItemCallback<Payment>() {
