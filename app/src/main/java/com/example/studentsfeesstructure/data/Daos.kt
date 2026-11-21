@@ -26,6 +26,8 @@ interface StudentDao {
 @Dao
 interface PaymentDao {
     @Insert suspend fun insert(payment: Payment)
+    @Update suspend fun update(payment: Payment)
+    @Delete suspend fun delete(payment: Payment)
 
     @Query("SELECT * FROM payments WHERE studentId = :id ORDER BY date DESC")
     fun getForStudent(id: Int): Flow<List<Payment>>

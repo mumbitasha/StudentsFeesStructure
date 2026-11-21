@@ -27,4 +27,6 @@ class FeeViewModel(app: Application) : AndroidViewModel(app) {
     }
     fun delete(s: Student) = viewModelScope.launch { repo.delete(s) }
     fun addPayment(p: Payment) = viewModelScope.launch { repo.addPayment(p) }
+    fun updatePayment(p: Payment) = viewModelScope.launch { repo.updatePayment(p) }
+    fun deletePayment(p: Payment) = viewModelScope.launch { repo.deletePayment(p) }
 }
