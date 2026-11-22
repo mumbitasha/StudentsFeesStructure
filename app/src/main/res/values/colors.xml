@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="status_cleared">#2E7D32</color>
+    <color name="status_partial">#EF6C00</color>
+    <color name="status_owing">#C62828</color>
 </resources>
