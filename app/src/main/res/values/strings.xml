@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">StudentsFeesStructure</string>
+
+    <string name="charged">Charged: KES 0</string>
+    <string name="collected">Collected: KES 0</string>
+    <string name="outstanding">Outstanding: KES 0</string>
+    <string name="search_student">Search by name or admission no.</string>
+    <string name="no_students">No students yet. Tap + to add one.</string>
+    <string name="add_student">Add student</string>
+    <string name="pay">Pay</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="payment_history">Payment history</string>
+    <string name="admission_number">Admission number</string>
+    <string name="full_name">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="programme">Programme</string>
+    <string name="fee_charged">Fee charged (KES)</string>
+    <string name="save">Save</string>
+    <string name="payment_amount">Amount (KES)</string>
+    <string name="payment_method">Method (M-Pesa / Bank / Cash)</string>
+    <string name="payment_reference">Reference (e.g. M-Pesa code)</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_cleared">#81C784</color>
+    <color name="status_partial">#FFB74D</color>
+    <color name="status_owing">#E57373</color>
+</resources>
