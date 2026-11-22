@@ -3,6 +3,10 @@ package com.example.studentsfeesstructure.data
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * SQL for the students table. Read queries return Flow, so Room re-emits
+ * new results automatically whenever students or payments change.
+ */
 @Dao
 interface StudentDao {
     @Insert suspend fun insert(student: Student)
@@ -23,6 +27,7 @@ interface StudentDao {
     fun getBalances(q: String): Flow<List<StudentBalance>>
 }
 
+/** SQL for the payments table: add, edit, delete and list a student's payments. */
 @Dao
 interface PaymentDao {
     @Insert suspend fun insert(payment: Payment)
