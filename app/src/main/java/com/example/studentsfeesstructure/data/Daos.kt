@@ -9,6 +9,11 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface StudentDao {
+    @Query("""SELECT COUNT(*) FROM (
+       SELECT s.studentId FROM students s LEFT JOIN payments p ON p.studentId = s.studentId
+       GROUP BY s.studentId
+       HAVING s.feeCharged - COALESCE(SUM(p.amount), 0) > 0)""")
+    suspend fun countOwing(): Int
     @Insert suspend fun insert(student: Student)
     @Update suspend fun update(student: Student)
     @Delete suspend fun delete(student: Student)
