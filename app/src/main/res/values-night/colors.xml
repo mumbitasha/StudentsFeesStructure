@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="status_cleared">#81C784</color>
-    <color name="status_partial">#FFB74D</color>
-    <color name="status_owing">#E57373</color>
+    <!-- Dark mode versions of the same palette -->
+    <color name="brand_primary">#93C5FD</color>
+    <color name="on_brand_primary">#0B1F4D</color>
+    <color name="brand_primary_container">#1E3A8A</color>
+    <color name="on_brand_primary_container">#DBEAFE</color>
+
+    <color name="accent_pink">#F472B6</color>
+    <color name="on_accent_pink">#3B0A20</color>
+    <color name="accent_pink_container">#6B1340</color>
+    <color name="on_accent_pink_container">#FCE7F3</color>
+
+    <color name="app_background">#0B1220</color>
+    <color name="surface">#131C2E</color>
+    <color name="text_primary">#E5E7EB</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="outline">#475569</color>
+    <color name="outline_variant">#1F2A3D</color>
+
+    <color name="hero_start">#172554</color>
+    <color name="hero_end">#1E40AF</color>
+
+    <color name="status_cleared">#4ADE80</color>
+    <color name="status_cleared_bg">#14361F</color>
+    <color name="status_partial">#F472B6</color>
+    <color name="status_partial_bg">#4A1030</color>
+    <color name="status_owing">#F87171</color>
+    <color name="status_owing_bg">#451414</color>
 </resources>

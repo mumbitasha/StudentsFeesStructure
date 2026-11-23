@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StudentsFeesStructure</string>
+    <string name="app_name">Student Fees</string>
 
     <string name="charged">Charged: KES 0</string>
     <string name="collected">Collected: KES 0</string>
@@ -20,4 +20,34 @@
     <string name="payment_amount">Amount (KES)</string>
     <string name="payment_method">Method (M-Pesa / Bank / Cash)</string>
     <string name="payment_reference">Reference (e.g. M-Pesa code)</string>
+
+    <!-- Navigation -->
+    <string name="nav_students">Students</string>
+    <string name="nav_summary">Summary</string>
+
+    <!-- Labels and headings -->
+    <string name="label_outstanding">Outstanding balance</string>
+    <string name="label_charged">Charged</string>
+    <string name="label_collected">Collected</string>
+    <string name="label_balance">Balance</string>
+    <string name="label_fee_charged">Fee charged</string>
+    <string name="label_total_paid">Total paid</string>
+    <string name="label_students">Students</string>
+    <string name="label_collection_rate">Collection rate</string>
+    <string name="label_cleared">Cleared</string>
+    <string name="label_partial">Partial</string>
+    <string name="label_owing">Owing</string>
+    <string name="label_totals">Totals</string>
+    <string name="label_fee_status">Fee status</string>
+    <string name="record_payment">Record payment</string>
+    <string name="edit_student">Edit</string>
+    <string name="delete_student">Delete</string>
+    <string name="section_student">Student</string>
+    <string name="section_fees">Fees</string>
+    <string name="save_student">Save student</string>
+    <string name="no_payments">No payments recorded yet.</string>
+    <string name="student_count">%1$d students</string>
+    <string name="collected_of">%1$s of %2$s collected</string>
+    <string name="paid_percent">%1$d%% paid</string>
+    <string name="payment_icon">Payment</string>
 </resources>

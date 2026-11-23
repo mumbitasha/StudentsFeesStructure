@@ -15,6 +15,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.studentsfeesstructure.ui.SummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary" />
+
+    <fragment
         android:id="@+id/studentDetailFragment"
         android:name="com.example.studentsfeesstructure.ui.StudentDetailFragment"
         android:label="Student"

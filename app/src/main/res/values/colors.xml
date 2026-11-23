@@ -3,7 +3,40 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="status_cleared">#2E7D32</color>
-    <color name="status_partial">#EF6C00</color>
+    <!-- Brand: blue -->
+    <color name="brand_primary">#1E40AF</color>
+    <color name="on_brand_primary">#FFFFFF</color>
+    <color name="brand_primary_container">#DBEAFE</color>
+    <color name="on_brand_primary_container">#1E3A8A</color>
+
+    <!-- Highlight: pink -->
+    <color name="accent_pink">#DB2777</color>
+    <color name="on_accent_pink">#FFFFFF</color>
+    <color name="accent_pink_container">#FCE7F3</color>
+    <color name="on_accent_pink_container">#831843</color>
+
+    <!-- Surfaces and text: white -->
+    <color name="app_background">#F5F7FB</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="outline">#CBD5E1</color>
+    <color name="outline_variant">#E2E8F0</color>
+
+    <!-- Hero banner (blue gradient) and text on top of it -->
+    <color name="hero_start">#1E3A8A</color>
+    <color name="hero_end">#2563EB</color>
+    <color name="hero_text">#FFFFFF</color>
+    <color name="hero_muted">#CCFFFFFF</color>
+    <color name="hero_track">#33FFFFFF</color>
+    <color name="hero_green">#86EFAC</color>
+    <color name="hero_pink">#F9A8D4</color>
+
+    <!-- Fee status: green = cleared, pink = partial, red = owing -->
+    <color name="status_cleared">#15803D</color>
+    <color name="status_cleared_bg">#DCFCE7</color>
+    <color name="status_partial">#BE185D</color>
+    <color name="status_partial_bg">#FCE7F3</color>
     <color name="status_owing">#C62828</color>
+    <color name="status_owing_bg">#FEE2E2</color>
 </resources>

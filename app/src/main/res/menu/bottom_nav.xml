@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Item ids match the destination ids in nav_graph.xml, so NavigationUI can switch tabs. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/studentListFragment"
+        android:icon="@drawable/ic_people"
+        android:title="@string/nav_students" />
+    <item
+        android:id="@+id/summaryFragment"
+        android:icon="@drawable/ic_insights"
+        android:title="@string/nav_summary" />
+</menu>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cards: white, rounded, thin border instead of a heavy shadow -->
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="strokeColor">@color/outline_variant</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- Text fields: outlined with rounded corners -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout.Search">
+        <item name="boxCornerRadiusTopStart">28dp</item>
+        <item name="boxCornerRadiusTopEnd">28dp</item>
+        <item name="boxCornerRadiusBottomStart">28dp</item>
+        <item name="boxCornerRadiusBottomEnd">28dp</item>
+        <item name="boxStrokeColor">@color/accent_pink</item>
+        <item name="startIconTint">@color/text_secondary</item>
+    </style>
+
+    <!-- Pink highlight for the main "add" action -->
+    <style name="Widget.App.Fab" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/accent_pink</item>
+        <item name="tint">@color/on_accent_pink</item>
+    </style>
+
+    <style name="Widget.App.ExtendedFab" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">@color/accent_pink</item>
+        <item name="android:textColor">@color/on_accent_pink</item>
+        <item name="iconTint">@color/on_accent_pink</item>
+    </style>
+
+    <!-- Buttons: tall, rounded. Default = blue, Pink = main action, Danger = delete -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Pink">
+        <item name="backgroundTint">@color/accent_pink</item>
+        <item name="android:textColor">@color/on_accent_pink</item>
+        <item name="iconTint">@color/on_accent_pink</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="strokeColor">@color/outline</item>
+    </style>
+
+    <style name="Widget.App.Button.Danger" parent="Widget.App.Button.Outlined">
+        <item name="android:textColor">@color/status_owing</item>
+        <item name="iconTint">@color/status_owing</item>
+        <item name="strokeColor">@color/status_owing</item>
+        <item name="rippleColor">@color/status_owing_bg</item>
+    </style>
+
+    <!-- Bottom navigation bar: white with a pink active highlight -->
+    <style name="Widget.App.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="elevation">8dp</item>
+        <item name="itemIconTint">@color/bottom_nav_icon</item>
+        <item name="itemTextColor">@color/bottom_nav_text</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.App.BottomNav.Indicator</item>
+    </style>
+
+    <style name="Widget.App.BottomNav.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent_pink_container</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.App.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Small uppercase label above a number, e.g. "OUTSTANDING" -->
+    <style name="TextAppearance.App.Overline" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <!-- Rounded status pill: Cleared / Partial / Owing -->
+    <style name="Widget.App.StatusPill" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Section heading, e.g. "Payment history" -->
+    <style name="Widget.App.SectionTitle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+</resources>
