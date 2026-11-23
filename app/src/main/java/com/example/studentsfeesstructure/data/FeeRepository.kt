@@ -2,6 +2,10 @@ package com.example.studentsfeesstructure.data
 
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * The one place that decides where data comes from (today: the Room DAOs).
+ * The ViewModel calls this class and never touches the DAOs directly.
+ */
 class FeeRepository(private val students: StudentDao, private val payments: PaymentDao) {
     fun balances(q: String): Flow<List<StudentBalance>> = students.getBalances(q)
     fun student(id: Int): Flow<Student?> = students.getById(id)

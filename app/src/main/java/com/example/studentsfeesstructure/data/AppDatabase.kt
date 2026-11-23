@@ -12,6 +12,10 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
     }
 }
 
+/**
+ * The Room database saved on the phone as fees.db. One shared instance (singleton)
+ * for the whole app, so data survives closing and reopening the app.
+ */
 @Database(entities = [Student::class, Payment::class], version = 2, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun studentDao(): StudentDao

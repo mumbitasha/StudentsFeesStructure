@@ -8,6 +8,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
 
+/**
+ * Holds screen state and talks to the repository. Survives rotation.
+ * All three fragments share this one instance through activityViewModels().
+ * Room's Flows are turned into LiveData with asLiveData(), so screens update by themselves.
+ */
 class FeeViewModel(app: Application) : AndroidViewModel(app) {
     private val db = AppDatabase.get(app)
     private val repo = FeeRepository(db.studentDao(), db.paymentDao())
