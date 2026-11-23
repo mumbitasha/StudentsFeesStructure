@@ -38,6 +38,7 @@ class StudentDetailFragment : Fragment() {
         vm.student(studentId).observe(viewLifecycleOwner) { s ->
             student = s
             if (s != null) {
+                b.tvInitials.text = initials(s.fullName)
                 b.tvName.text = s.fullName
                 b.tvDetails.text = "${s.admissionNo} · ${s.programme}\nPhone: ${s.phone}"
                 refreshSummary()
@@ -46,6 +47,7 @@ class StudentDetailFragment : Fragment() {
 
         vm.payments(studentId).observe(viewLifecycleOwner) { list ->
             adapter.submitList(list)
+            b.tvNoPayments.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
             totalPaid = list.sumOf { it.amount }
             refreshSummary()
         }
@@ -70,9 +72,14 @@ class StudentDetailFragment : Fragment() {
 
     private fun refreshSummary() {
         val s = student ?: return
-        b.tvCharged.text = "Fee charged: ${money(s.feeCharged)}"
-        b.tvPaid.text = "Total paid: ${money(totalPaid)}"
-        b.tvBalance.text = "Balance: ${money(s.feeCharged - totalPaid)}"
+        val balance = s.feeCharged - totalPaid
+        val percent = percentPaid(s.feeCharged, totalPaid)
+        b.tvCharged.text = money(s.feeCharged)
+        b.tvPaid.text = money(totalPaid)
+        b.tvBalance.showBalance(balance)
+        b.tvStatus.showStatus(FeeStatus.of(balance, totalPaid))
+        b.progressPaid.setProgressCompat(percent, true)
+        b.tvPaidPercent.text = getString(R.string.paid_percent, percent)
     }
 
     private fun showPaymentDialog(existing: Payment? = null) {

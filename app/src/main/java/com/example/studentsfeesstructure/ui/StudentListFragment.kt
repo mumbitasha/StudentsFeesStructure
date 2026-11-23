@@ -34,9 +34,11 @@ class StudentListFragment : Fragment() {
             adapter.submitList(list)
             val charged = list.sumOf { it.feeCharged }
             val paid = list.sumOf { it.totalPaid }
-            b.tvCharged.text = "Charged: ${money(charged)}"
-            b.tvPaid.text = "Collected: ${money(paid)}"
-            b.tvOutstanding.text = "Outstanding: ${money(charged - paid)}"
+            b.tvCharged.text = money(charged)
+            b.tvPaid.text = money(paid)
+            b.tvOutstanding.text = money(charged - paid)
+            b.progressCollected.setProgressCompat(percentPaid(charged, paid), true)
+            b.tvCount.text = getString(R.string.student_count, list.size)
             b.tvEmpty.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
         }
 

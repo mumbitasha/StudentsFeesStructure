@@ -23,6 +23,9 @@ class FeeViewModel(app: Application) : AndroidViewModel(app) {
     val students: LiveData<List<StudentBalance>> =
         query.flatMapLatest { repo.balances(it) }.asLiveData()
 
+    /** Every student, ignoring the search box. Used by the Summary tab. */
+    val allStudents: LiveData<List<StudentBalance>> = repo.balances("").asLiveData()
+
     fun setQuery(q: String) { query.value = q }
     fun student(id: Int): LiveData<Student?> = repo.student(id).asLiveData()
     fun payments(id: Int): LiveData<List<Payment>> = repo.payments(id).asLiveData()
